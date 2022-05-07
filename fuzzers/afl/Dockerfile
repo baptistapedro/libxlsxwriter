@@ -8,7 +8,7 @@ RUN cmake -DCMAKE_C_COMPILER=afl-clang -DCMAKE_CXX_COMPILER=afl-clang++ -DBUILD_
 RUN make
 RUN make install
 COPY src/fuzz_png_xlsx.c .
-RUN afl-clang -L/libxlswriter fuzz_png_xlsx.c -o /fuzz_image_xlsx -lxlsxwriter 
+RUN afl-clang -L/usr/local/lib -I/usr/local/include/xlsxwriter/ fuzz_png_xlsx.c -o /fuzz_image_xlsx -lxlsxwriter 
 RUN mkdir /xlsxImage-corpus
 RUN wget https://file-examples.com/wp-content/uploads/2017/10/file_example_PNG_500kB.png
 RUN wget https://file-examples.com/wp-content/uploads/2017/10/file_example_PNG_1MB.png
