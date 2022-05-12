@@ -3,5 +3,5 @@ duration: 80000
 project: libxlswriter
 target: libxlswriter-fuzz-image
 cmds:
-  - cmd: /fuzz_png_xlsx @@
+  - cmd: /fuzz_image_xlsx @@
     afl: true
