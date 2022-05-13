@@ -1,0 +1,7 @@
+image: pedbap/xlsx-libfuzz
+duration: 300
+project: xlsx-libfuzz
+target: xlsx-libfuzzer
+cmds:
+  - cmd: /fuzz_ws
+    libfuzzer: true
